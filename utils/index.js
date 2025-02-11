@@ -1,21 +1,12 @@
 export class Utils {
 
-  log({ info, msg }) {
-    let string = '';
-
-    if (msg && info) {
-      string = `${msg}: ${info}`;
-    } else if (info) {
-      string = info;
-    } else {
-      string = msg
-    }
-
-    console.log(string);
+  static log({ info, msg }) {
+    const string = [msg, info].filter(Boolean).join(": ");
+    console.log(string)
   }
 
-  separator() {
-    console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+  static separator(char = '-=-', length = 12) {
+    console.log(String(char).repeat(Number(length)))
   }
 
 }
