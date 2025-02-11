@@ -3,7 +3,7 @@
  * pelos 8 últimos e vice-e-versa. Escreva ao final o vetor obtido.
  */
 
-import { Utils } from "../../../utils/index.js";
+import { Utils } from "../../../_utils/index.js";
 
 const LENGTH = 16;
 const sixteenPositionVector = Array

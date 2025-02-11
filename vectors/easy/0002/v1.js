@@ -2,7 +2,7 @@
  Declare um vetor de 10 posições e o preencha com os 10 primeiros números impares e o escreva.
  */
 
-import { Utils } from "../../../utils/index.js";
+import { Utils } from "../../../_utils/index.js";
 
 const vector = Array.from({ length: 100 }, (_, i) => i);
 
