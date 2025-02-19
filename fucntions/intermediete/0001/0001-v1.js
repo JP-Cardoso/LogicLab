@@ -9,21 +9,47 @@ const MEDIA_TYPE = {
   H: 'H'
 }
 
-function calculateMedia({ note, type }) {
+function calculateArithmeticMean({ arr }) {
+  if (!Array.isArray(arr)) return "Inpossível de calcular a média aritimética";
+
+  const length = arr.length;
+
+  const mean = arr.reduce((a, b) => {
+    return a += b;
+  }, 0) / length;
+
+  return `A média aritimética é de: ${mean}`
+}
+
+function calculateWeightedAverage({ arr }) {
+  if (!Array.isArray(arr)) return "Inpossível de calcular a média ponderada";
+
+  const noteA = arr.at(0);
+  const noteB = arr.at(1);
+  const noteC = arr.at(-1);
+
+  const some = ((noteA * 2) + (noteB * 3) + (noteC * 5)) / 10;
+  console.log(some)
+}
+
+function calculateMedia({ notes, type }) {
 
   switch (type) {
     case MEDIA_TYPE.A:
-      console.log("type A", type)
+      console.log(calculateArithmeticMean({ arr: notes }));
       break;
     case MEDIA_TYPE.P:
       console.log("type P", type)
+      calculateWeightedAverage({arr: notes});
       break;
     case MEDIA_TYPE.H:
       console.log("type H", type)
       break;
     default:
-      return console.log("Valor não encontrado");      
+      return console.log("Valor não encontrado");
   }
 }
 
-calculateMedia({ note: [], type: MEDIA_TYPE.A });
+const notesArr = [10, 6, 5];
+
+calculateMedia({ notes: notesArr, type: MEDIA_TYPE.P });
